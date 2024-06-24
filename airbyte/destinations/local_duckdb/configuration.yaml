@@ -1,0 +1,7 @@
+resource_name: local-duckdb
+definition_type: destination
+definition_id: 94bd199c-2ff0-4aa2-b98e-17f0acb72610
+definition_image: airbyte/destination-duckdb
+definition_version: 0.4.1
+configuration:
+  destination_path: /local/example.duckdb

@@ -1,0 +1,12 @@
+resource_name: File (CSV, JSON, Excel, Feather, Parquet)
+definition_type: source
+definition_id: 778daa7c-feaf-4db6-96f3-70fd645acc77
+definition_image: airbyte/source-file
+definition_version: 0.5.2
+configuration:
+  url: https://raw.githubusercontent.com/FBosler/Medium-Data-Extraction/master/sales_team.csv
+  format: csv
+  provider:
+    storage: HTTPS
+    user_agent: false
+  dataset_name: sales__companies

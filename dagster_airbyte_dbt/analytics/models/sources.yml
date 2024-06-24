@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: "airbyte"
+    database: example
+    schema: main
+    tables:
+      - name: "_airbyte_raw_sales__companies"

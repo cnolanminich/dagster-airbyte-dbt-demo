@@ -1,0 +1,25 @@
+# airbyte_connection.yaml
+
+sources:
+  - name: csv_source
+    type: File
+    configuration:
+      url: "https://raw.githubusercontent.com/FBosler/Medium-Data-Extraction/master/sales_team.csv"
+      format: "csv"
+      provider: "HTTPSPublicWeb"
+      dataset_name: "sales__companies"
+
+destinations:
+  - name: duckdb_destination
+    type: DuckDB
+    configuration:
+      database: "/local/example.duckdb"
+      table: "sales__companies"
+
+connections:
+  - name: csv_to_duckdb
+    source: csv_source
+    destination: duckdb_destination
+    stream_config:
+      your_dataset_name:
+        sync_mode: "full_refresh_overwrite"
